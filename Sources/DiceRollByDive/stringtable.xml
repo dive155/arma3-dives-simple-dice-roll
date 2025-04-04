@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="diceroll">
+	<Package name="diceUI">
+		<Key ID="STR_DSDR_Title">
+			<Original>Luck Check:</Original>
+			<Russian>Проверка Удачи:</Russian>
+		</Key>
+		<Key ID="STR_DSDR_ForPlayer">
+			<Original>For Player:</Original>
+			<Russian>Для Игрока:</Russian>
+		</Key>
+		<Key ID="STR_DSDR_Difficulty">
+			<Original>Difficulty:</Original>
+			<Russian>Сложность:</Russian>
+		</Key>
+		<Key ID="STR_DSDR_Success">
+			<Original>Success!</Original>
+			<Russian>Удача!</Russian>
+		</Key>
+		<Key ID="STR_DSDR_SuccessCritical">
+			<Original>Critical Success!</Original>
+			<Russian>Критическая Удача!</Russian>
+		</Key>
+		<Key ID="STR_DSDR_Failure">
+			<Original>Failure!</Original>
+			<Russian>Неудача!</Russian>
+		</Key>
+		<Key ID="STR_DSDR_FailureCritical">
+			<Original>Critical Failure!</Original>
+			<Russian>Критическая Неудача!</Russian>
+		</Key>
+	</Package>
+	<Package name="settingsUI">
+		<Key ID="STR_DSDR_ModuleCategory">
+			<Original>Dive's Simple Dice Roll</Original>
+			<Russian>Dive's Simple Dice Roll</Russian>
+		</Key>
+		<Key ID="STR_DSDR_ModuleSubcategory">
+			<Original>Roll Dice (D20)</Original>
+			<Russian>Бросить Кубик (D20)</Russian>
+		</Key>
+		<Key ID="STR_DSDR_SettingsHeader">
+			<Original>Roll the Dice</Original>
+			<Russian>Бросить Кубик</Russian>
+		</Key>
+		<Key ID="STR_DSDR_RadiusTitle">
+			<Original>Radius</Original>
+			<Russian>Радиус</Russian>
+		</Key>
+		<Key ID="STR_DSDR_RadiusDescription">
+			<Original>Players within the Radius will see the Dice Roll</Original>
+			<Russian>Игроки в пределах Радиуса увидят бросок</Russian>
+		</Key>
+		<Key ID="STR_DSDR_GlobalTitle">
+			<Original>Global</Original>
+			<Russian>Глобально</Russian>
+		</Key>
+		<Key ID="STR_DSDR_GlobalDescription">
+			<Original>Show to every player on the map</Original>
+			<Russian>Все игроки на карте увидят бросок</Russian>
+		</Key>
+		<Key ID="STR_DSDR_MessageTitle">
+			<Original>Message</Original>
+			<Russian>Сообщение</Russian>
+		</Key>
+		<Key ID="STR_DSDR_MessageDescription">
+			<Original>Message to be shown to the player describing what the Dice Roll is about</Original>
+			<Russian>Сообщение для игрока с информацией что проверяет этот Бросок Кубика</Russian>
+		</Key>
+		<Key ID="STR_DSDR_MessageDefault">
+			<Original>Luck Check</Original>
+			<Russian>Проверка Удачи</Russian>
+		</Key>
+		<Key ID="STR_DSDR_DifficultyTitle">
+			<Original>Difficulty</Original>
+			<Russian>Сложность</Russian>
+		</Key>
+		<Key ID="STR_DSDR_DifficultyDescription">
+			<Original>The value the player needs to roll to succeed</Original>
+			<Russian>Какое значение должен бросить игрок для успешного прохождения проверки</Russian>
+		</Key>
+	</Package>
+</Project>
