@@ -2,8 +2,8 @@
 <Project name="diceroll">
 	<Package name="diceUI">
 		<Key ID="STR_DSDR_Title">
-			<Original>Luck Check:</Original>
-			<Russian>Проверка Удачи:</Russian>
+			<Original>Dice Roll:</Original>
+			<Russian>Бросок Кубика:</Russian>
 		</Key>
 		<Key ID="STR_DSDR_ForPlayer">
 			<Original>For Player:</Original>
@@ -44,16 +44,16 @@
 			<Russian>Бросить Кубик</Russian>
 		</Key>
 		<Key ID="STR_DSDR_RadiusTitle">
-			<Original>Radius</Original>
-			<Russian>Радиус</Russian>
+			<Original>Visibility Radius</Original>
+			<Russian>Радиус Видимости</Russian>
 		</Key>
 		<Key ID="STR_DSDR_RadiusDescription">
 			<Original>Players within the Radius will see the Dice Roll</Original>
 			<Russian>Игроки в пределах Радиуса увидят бросок</Russian>
 		</Key>
 		<Key ID="STR_DSDR_GlobalTitle">
-			<Original>Global</Original>
-			<Russian>Глобально</Russian>
+			<Original>Global Visibility</Original>
+			<Russian>Глобальная Видимость</Russian>
 		</Key>
 		<Key ID="STR_DSDR_GlobalDescription">
 			<Original>Show to every player on the map</Original>
@@ -78,6 +78,10 @@
 		<Key ID="STR_DSDR_DifficultyDescription">
 			<Original>The value the player needs to roll to succeed</Original>
 			<Russian>Какое значение должен бросить игрок для успешного прохождения проверки</Russian>
+		</Key>
+		<Key ID="STR_DSDR_NoPlayersInRange">
+			<Original>No players within radius!</Original>
+			<Russian>Нет игроков в пределах радуса!</Russian>
 		</Key>
 	</Package>
 </Project>

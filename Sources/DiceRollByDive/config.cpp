@@ -42,3 +42,5 @@ class Extended_PostInit_EventHandlers
 		init="call compile preprocessFileLineNumbers 'DiceRollByDive\XEH_postInit.sqf'";
 	};
 };
+
+#include "CfgSounds.hpp"
