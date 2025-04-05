@@ -21,8 +21,11 @@ class CfgFunctions {
         class Functions {
             file = "DiceRollByDive\functions";
             class rollDice {};
+			class rollDiceZeus {};
 			class generateDiceFrames {};
 			class generateDiceRange {};
+			class getAffectedPlayers {};
+			class getTargetPlayerName {};
         };
     };
 };

@@ -27,7 +27,7 @@ while {true} do {
 	_delay = 1 / (_denominatorConstant + (_currentSpeed * _speedConstant));  // Example delay function: the higher the speed, the smaller the delay
 	
 	// If the delay exceeds 1 second, stop adding frames
-	if (_delay > 1 or _currentValue == _previousValue) exitWith {};
+	if (_delay > 1 or (_currentValue == _previousValue and _currentSpeed < 1)) exitWith {};
 
 	// Add the frame to the frames array
 	_frames pushBack [_currentValue, _delay];

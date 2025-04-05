@@ -11,50 +11,29 @@ if (!hasInterface) exitWith {};
 	  ["SLIDER",[localize "STR_DSDR_DifficultyTitle",localize "STR_DSDR_DifficultyDescription"],[2,20,10,0]]
 	],{
 		params["_values","_arguments"];
-
-		_radius = _values select 0;
-		_global = _values select 1;
-		_message = _values select 2;
-		_difficulty = round (_values select 3);		
-		
 		_pos=_arguments select 0; 
 		_object = _arguments select 1;
-		_playerName = "";
-		
-		if (isPlayer _object) then {
-			_playerName = name _object;
-		};
-		
-		_affectedPlayers = allPlayers;
-		if not _global then {
-			_affectedPlayers = allPlayers select {
-				private _playerPosASL = getPosASL _x;
-				(_playerPosASL distance  _pos) <= _radius
-			};
-		};
 
+		_affectedPlayers = [_values, _arguments] call DSDR_fnc_getAffectedPlayers;
+		if (count _affectedPlayers < 1) exitWith {};
 		
-		if (count _affectedPlayers < 1) exitWith {
-			[objNull, localize "STR_DSDR_NoPlayersInRange"] call BIS_fnc_showCuratorFeedbackMessage;
-		};
+		_playerName = [_object] call DSDR_fnc_getTargetPlayerName;
 		
+		_message = _values select 2;
+		_difficulty = round (_values select 3);		
 		_sides = 20;
+		_initialValue = 1 + floor random _sides;
+		_initialSpeed = 3 + random 3;
 		_diceParams = [
 			_message,
 			_difficulty,
 			_sides, 
-			1 + floor random _sides, 
-			3 + random 3,
+			_initialValue, 
+			_initialSpeed,
 			_playerName
 		];
 		
-		{
-			_diceParams remoteExec ["DSDR_fnc_rollDice", _x];			
-		} forEach _affectedPlayers;
-		
-		if not (player in _affectedPlayers) then {
-			_diceParams spawn DSDR_fnc_rollDice;
-		};
+		[_diceParams, _affectedPlayers] call DSDR_fnc_rollDiceZeus
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
