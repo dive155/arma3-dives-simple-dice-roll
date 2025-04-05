@@ -29,6 +29,10 @@
 			<Original>Critical Failure!</Original>
 			<Russian>Критическая Неудача!</Russian>
 		</Key>
+		<Key ID="STR_DSDR_Result">
+			<Original>Result</Original>
+			<Russian>Результат</Russian>
+		</Key>
 	</Package>
 	<Package name="settingsUI">
 		<Key ID="STR_DSDR_ModuleCategory">
@@ -36,8 +40,8 @@
 			<Russian>Dive's Simple Dice Roll</Russian>
 		</Key>
 		<Key ID="STR_DSDR_ModuleSubcategory">
-			<Original>Roll Dice (D20)</Original>
-			<Russian>Бросить Кубик (D20)</Russian>
+			<Original>Roll the Dice</Original>
+			<Russian>Бросить Кубик</Russian>
 		</Key>
 		<Key ID="STR_DSDR_SettingsHeader">
 			<Original>Roll the Dice</Original>
@@ -68,8 +72,16 @@
 			<Russian>Сообщение для игрока с информацией что проверяет этот Бросок Кубика</Russian>
 		</Key>
 		<Key ID="STR_DSDR_MessageDefault">
-			<Original>Luck Check</Original>
-			<Russian>Проверка Удачи</Russian>
+			<Original>Zeus initiated a Dice Roll</Original>
+			<Russian>Зевс инициировал Бросок Кубика</Russian>
+		</Key>
+		<Key ID="STR_DSDR_UseDifficultyTitle">
+			<Original>Check against Difficulty</Original>
+			<Russian>Проверка Сложности</Russian>
+		</Key>
+		<Key ID="STR_DSDR_UseDifficultyDescription">
+			<Original>The dice value will be compared against the difficulty value set below to determine Success or Failure</Original>
+			<Russian>Результат броска будет сравнен со значением сложности установленным ниже для определения Удачи/Неудачи</Russian>
 		</Key>
 		<Key ID="STR_DSDR_DifficultyTitle">
 			<Original>Difficulty</Original>
@@ -78,6 +90,14 @@
 		<Key ID="STR_DSDR_DifficultyDescription">
 			<Original>The value the player needs to roll to succeed</Original>
 			<Russian>Какое значение должен бросить игрок для успешного прохождения проверки</Russian>
+		</Key>
+		<Key ID="STR_DSDR_UseCriticalTitle">
+			<Original>Enable Critical Success/Failure</Original>
+			<Russian>Включить Критическую Удачу/Неудачу</Russian>
+		</Key>
+		<Key ID="STR_DSDR_UseCriticalDescription">
+			<Original>When enabled, the lowest value of the dice will result in a "Critical Failure" message, while the highest value of the dice will result in a "Critical Success"  message</Original>
+			<Russian>Когда включено то минимальное значение при броске кубика приведет к показу сообщения "Критическая Неудача", а максимальное к "Критическая Удача"</Russian>
 		</Key>
 		<Key ID="STR_DSDR_NoPlayersInRange">
 			<Original>No players within radius!</Original>

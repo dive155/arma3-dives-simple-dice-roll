@@ -4,7 +4,8 @@ params [
 	"_initialSpeed", 
 	["_slowDownPerFrame", 0.97],
 	["_speedConstant", 5], 
-	["_denominatorConstant", 0.3]
+	["_denominatorConstant", 0.3],
+	["_useZero", false]
 ];
 
 // Define the roulette values
@@ -21,7 +22,7 @@ _frames = [];
 while {true} do {
 	// Calculate the current value to show (modulo 20 to make sure we are in the 1-20 range)
 	_currentValue = (_currentValue + floor(_currentSpeed)) mod _numValues;
-	_currentValue = if (_currentValue == 0) then {_numValues} else {_currentValue};  // Ensure it wraps correctly from 0 to 20
+	_currentValue = if (_currentValue == 0 and not _useZero) then {_numValues} else {_currentValue};  // Ensure it wraps correctly from 0 to 20
 
 	// Calculate the delay for this frame. Start small, grow larger as the roulette slows down.
 	_delay = 1 / (_denominatorConstant + (_currentSpeed * _speedConstant));  // Example delay function: the higher the speed, the smaller the delay
@@ -36,7 +37,7 @@ while {true} do {
 	_currentSpeed = _currentSpeed * _slowDownPerFrame;  // Slow down by the given factor per frame
 	
 	// Update the previous value for comparison in the next frame
-    _previousValue = _currentValue;
+	_previousValue = _currentValue;
 };
 
 // Return the frames array

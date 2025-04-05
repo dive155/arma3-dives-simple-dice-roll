@@ -1,4 +1,4 @@
-params ["_numValues", "_value"];
+params ["_numValues", "_value", ["_useZero", false]];
 
 // Create an empty array to store the range
 _range = [];
@@ -15,8 +15,15 @@ _fnc_addWhitespace = {
 _tempRange = [];
 for "_i" from _value - 3 to _value - 1 do {
 	_current = _i;
-	if (_current < 1) then {
-		_current = _numValues + _current;
+	
+	if (!_useZero) then {	
+		if (_current < 1) then {
+			_current = _numValues + _current;
+		};
+	} else {
+		if (_current < 0) then {
+			_current = _numValues + _current;
+		};
 	};
 	
 	_tempRange pushBack ([_current] call _fnc_addWhitespace);
@@ -30,10 +37,13 @@ _range pushBack str(_value);
 _tempRange = [];
 for "_i" from _value + 1 to _value + 3 step 1 do {
 	_current = _i;
-	if (_current == _numValues) then {
-		_current = _numValues;
+	
+	if (_useZero) then {
+		_current = _i % _numValues;
 	} else {
-		_current = _i % _numValues;  
+		if (_current != _numValues) then {
+			_current = _i % _numValues;  
+		};
 	};
 	
 	_tempRange pushBack ([_current] call _fnc_addWhitespace);

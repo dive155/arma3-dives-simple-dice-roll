@@ -26,6 +26,7 @@ class CfgFunctions {
 			class generateDiceRange {};
 			class getAffectedPlayers {};
 			class getTargetPlayerName {};
+			class parseModuleArguments {};
         };
     };
 };
