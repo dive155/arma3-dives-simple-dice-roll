@@ -1,4 +1,4 @@
-name		 = "Dives Simple Dice Roll";								// Name of your mod
+name		 = "Dive's DnD Dice - RPG Dice Roll for Zeus";								// Name of your mod
 author		 = "Dive";				// Affects Arma 3 Launcher, when the mod are loaded as local
 
 // Overview text, displayed from the extension menu
@@ -7,11 +7,11 @@ hidePicture	= 0;	// Hide the extension menu
 
 
 picture = "logo.paa";
-description = "Dives Simple Dice Roll";
+description = "Dive's DnD Dice";
 logo = "logo.paa";
 logoOver = "logo.paa";
-tooltip = "Dives Simple Dice Roll";
-overview = "Dives Simple Dice Roll";
+tooltip = "Dive's DnD Dice";
+overview = "Dive's DnD Dice";
 overviewPicture = "logo.paa";
-overviewText = "Dives Simple Dice Roll";
+overviewText = "Dive's DnD Dice";
 overviewFootnote = "";
