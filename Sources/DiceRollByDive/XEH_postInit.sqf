@@ -40,7 +40,7 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d4_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D6)", 
 {
@@ -82,7 +82,7 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d6_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D8)", 
 {
@@ -124,7 +124,7 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d8_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D12)", 
 {
@@ -166,7 +166,7 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d12_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D10)", 
 {
@@ -208,7 +208,7 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d10_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D100)", 
 {
@@ -234,7 +234,7 @@ if (!hasInterface) exitWith {};
 		_playerName = [_object] call DSDR_fnc_getTargetPlayerName;
 				
 		_sides = 100;
-		_initialValue = floor random _sides;
+		_initialValue = 1 + floor random _sides;
 		_initialSpeed = 30 + random 30;
 		
 		[[
@@ -250,7 +250,7 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d100_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D20)", 
 {
@@ -292,4 +292,4 @@ if (!hasInterface) exitWith {};
 		
 	},{},[_pos, _object]] call zen_dialog_fnc_create;
 
-}, "\DiceRollByDive\ui\DSDR_module_icon.paa"] call zen_custom_modules_fnc_register;
+}, "\DiceRollByDive\ui\d20_small.paa"] call zen_custom_modules_fnc_register;

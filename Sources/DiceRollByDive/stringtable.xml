@@ -36,8 +36,8 @@
 	</Package>
 	<Package name="settingsUI">
 		<Key ID="STR_DSDR_ModuleCategory">
-			<Original>Dive's Simple Dice Roll</Original>
-			<Russian>Dive's Simple Dice Roll</Russian>
+			<Original>Dive's DnD Dice</Original>
+			<Russian>DnD Кубики от Dive</Russian>
 		</Key>
 		<Key ID="STR_DSDR_ModuleSubcategory">
 			<Original>Roll the Dice</Original>
