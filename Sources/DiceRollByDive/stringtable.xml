@@ -99,6 +99,15 @@
 			<Original>When enabled, the lowest value of the dice will result in a "Critical Failure" message, while the highest value of the dice will result in a "Critical Success"  message</Original>
 			<Russian>Когда включено то минимальное значение при броске кубика приведет к показу сообщения "Критическая Неудача", а максимальное к "Критическая Удача"</Russian>
 		</Key>
+		<Key ID="STR_DSDR_CodeTitle">
+			<Original>Script to Execute after the Roll (hover for tooltip):</Original>
+			<Russian>Выполнить скрипт после Броска (наведите курсор для подсказки):</Russian>
+		</Key>
+		<Key ID="STR_DSDR_CodeDescription">
+			<Original>The execution will be LOCAL to the computer of the Zeus who initiated the Dice Roll.%Available Variables:%_result - a numerical value representing the result of the Dice Roll.%_checkPassed - returns true if the difficulty check is passed. Always returns true if the check was deactivated.%_message - the message that was shown to the players.%_hasDifficulty - returns true if difficulty check was active.%_difficulty - which difficulty was set for the difficulty check.%_hasCriticals - whether or not the critical success/failure mechanic was active.%_sides - how many sides the dice had.%_targetPlayerName - name of the target player, empty if none.%_affectedPlayers - the array of all players who have seen the dice roll, including zeus.</Original>
+			<Russian>Выполнение будет ЛОКАЛЬНЫМ на компьютере Зевса, который инициировал Бросок Кубика.%Доступные переменные:%_result — числовое значение, представляющее результат броска.%_checkPassed — возвращает true, если проверка сложности пройдена. Всегда возвращает true, если проверка была отключена.%_message — сообщение, показанное игрокам.%_hasDifficulty — возвращает true, если проверка сложности была активна.%_difficulty — установленная сложность для проверки.%_hasCriticals — активна ли механика критических успехов/провалов.%_sides — количество граней у Кубика.%_targetPlayerName — имя целевого игрока, пусто если не задано.%_affectedPlayers — массив всех игроков, увидевших бросок, включая Зевса.</Russian>
+		</Key>
+
 		<Key ID="STR_DSDR_NoPlayersInRange">
 			<Original>No players within radius!</Original>
 			<Russian>Нет игроков в пределах радуса!</Russian>

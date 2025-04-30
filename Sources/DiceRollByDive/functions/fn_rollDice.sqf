@@ -6,7 +6,9 @@ params [
 	"_speed",
 	"_playerName",
 	"_hasDifficulty",
-	"_hasCriticals"
+	"_hasCriticals",
+	["_affectedPlayers", []],
+	["_codeText", ""]
 ];
 
 // D10 starts with 0
@@ -102,6 +104,39 @@ if (_hasDifficulty) then {
 } else {
 	_outcome = call _fn_getResultMessage;
 	_sound = "DSDR_Success";
+};
+
+// Is Zeus
+if ((count _affectedPlayers > 0) and not (_codeText isEqualTo "")) then {
+	private _checkPassed = (not _hasDifficulty) or {_result >= _difficulty};
+	
+	private _args = [
+		_result, 
+		_checkPassed,
+		_message,
+		_hasDifficulty,
+		_difficulty,
+		_hasCriticals,
+		_sides, 
+		_playerName,
+		_affectedPlayers
+	];
+		
+	private _codeHeader = "params[
+		""_rollResult"", 
+		""_checkPassed"",
+		""_message"",
+		""_hasDifficulty"",
+		""_difficulty"",
+		""_hasCriticals"",
+		""_sides"", 
+		""_targetPlayerName"",
+		""_affectedPlayers""
+	];";
+	
+	private _code = _codeHeader + _codeText;
+	private _compiled = compile _code;
+	_args spawn _compiled;
 };
 
 playSound _sound;
