@@ -3,56 +3,10 @@ if (!hasInterface) exitWith {};
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D4)", 
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
-
-	private _restoreLineFeeds = {
-		private _input = _this select 0;
-		private _output = _input;
-		
-		if (typeName _input == "STRING") then {
-			private _outputArr = _input splitString "%";
-			_output = _outputArr joinString (toString [10])
-		};
-		_output
-	};
-	private _codeDesc = [localize "STR_DSDR_CodeDescription"] call _restoreLineFeeds;
-
-	[(localize "STR_DSDR_SettingsHeader") + " (D4)",[
-	  ["SLIDER:RADIUS",[localize "STR_DSDR_RadiusTitle",localize "STR_DSDR_RadiusDescription"],[0,200,50,0,(ASLToATL _pos),[255,0,0,200]]],
-	  ["CHECKBOX",[localize "STR_DSDR_GlobalTitle", localize "STR_DSDR_GlobalDescription"],[false]],
-	  ["EDIT",[localize "STR_DSDR_MessageTitle",localize "STR_DSDR_MessageDescription"],[localize "STR_DSDR_MessageDefault",{}]],
-	  ["CHECKBOX",[localize "STR_DSDR_UseDifficultyTitle", localize "STR_DSDR_UseDifficultyDescription"],[false]],
-	  ["SLIDER",[localize "STR_DSDR_DifficultyTitle",localize "STR_DSDR_DifficultyDescription"],[2,4,3,0]],
-	  ["CHECKBOX",[localize "STR_DSDR_UseCriticalTitle", localize "STR_DSDR_UseCriticalDescription"],[false]],
-	  ["EDIT:CODE",[localize "STR_DSDR_CodeTitle",_codeDesc],["",{}]]
-	],{
-		params["_values","_arguments"];
-		
-		([_values, _arguments] call DSDR_fnc_parseModuleArguments) params[
-			"_pos", "_object", "_message", "_hasDifficulty", "_difficulty", "_hasCriticals", "_codeText"
-		];
-
-		_affectedPlayers = [_values, _arguments] call DSDR_fnc_getAffectedPlayers;
-		if (count _affectedPlayers < 1) exitWith {};
-		
-		_playerName = [_object] call DSDR_fnc_getTargetPlayerName;
-				
-		_sides = 4;
-		_initialValue = 1 + floor random _sides;
-		_initialSpeed = 3 + random 3;
-		
-		[[
-			_message,
-			_difficulty,
-			_sides, 
-			_initialValue, 
-			_initialSpeed,
-			_playerName,
-			_hasDifficulty,
-			_hasCriticals
-		], _affectedPlayers, _codeText] call DSDR_fnc_rollDiceZeus
-		
-	},{},[_pos, _object]] call zen_dialog_fnc_create;
-
+	
+	private _args = _this + [4, false, [2,4,3,0], 3];
+	_args call DSDR_fnc_executeDiceModule;
+	
 }, "\DiceRollByDive\ui\d4_small.paa"] call zen_custom_modules_fnc_register;
 
 [localize "STR_DSDR_ModuleCategory", (localize "STR_DSDR_ModuleSubcategory") + " (D6)", 
