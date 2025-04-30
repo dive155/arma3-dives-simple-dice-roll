@@ -36,8 +36,6 @@ private _codeDesc = [localize "STR_DSDR_CodeDescription"] call _restoreLineFeeds
 
 	_affectedPlayers = [_values, _arguments] call DSDR_fnc_getAffectedPlayers;
 	if (count _affectedPlayers < 1) exitWith {};
-	
-	_playerName = [_object] call DSDR_fnc_getTargetPlayerName;
 			
 	_initialValue = floor random _sides;
 	if (_sides != 10) then {
@@ -51,7 +49,7 @@ private _codeDesc = [localize "STR_DSDR_CodeDescription"] call _restoreLineFeeds
 		_sides, 
 		_initialValue, 
 		_randomSpeed,
-		_playerName,
+		_object,
 		_hasDifficulty,
 		_hasCriticals
 	], _affectedPlayers, _codeText] call DSDR_fnc_rollDiceZeus

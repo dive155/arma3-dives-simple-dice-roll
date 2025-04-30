@@ -4,7 +4,7 @@ params [
 	"_sides", 
 	"_startValue", 
 	"_speed",
-	"_playerName",
+	"_targetPlayer",
 	"_hasDifficulty",
 	"_hasCriticals",
 	["_affectedPlayers", []],
@@ -13,6 +13,8 @@ params [
 
 // D10 starts with 0
 _useZero = _sides == 10;
+
+_playerName = if (not isNull _targetPlayer) then {name _targetPlayer} else {""};
 
 _introText = format ["<img <img size='5' image='\DiceRollByDive\ui\d%1_big.paa'/><br/><t font='PuristaBold' size='3'>%2 (D%3)</t><br/><t font='PuristaMedium' color='#dedede' size='2'>%4</t>", _sides, (localize "STR_DSDR_Title"), _sides, _message];
 if (_playerName != "") then {
@@ -118,7 +120,7 @@ if ((count _affectedPlayers > 0) and not (_codeText isEqualTo "")) then {
 		_difficulty,
 		_hasCriticals,
 		_sides, 
-		_playerName,
+		_targetPlayer,
 		_affectedPlayers
 	];
 		
@@ -130,7 +132,7 @@ if ((count _affectedPlayers > 0) and not (_codeText isEqualTo "")) then {
 		""_difficulty"",
 		""_hasCriticals"",
 		""_sides"", 
-		""_targetPlayerName"",
+		""_targetPlayer"",
 		""_affectedPlayers""
 	];";
 	
