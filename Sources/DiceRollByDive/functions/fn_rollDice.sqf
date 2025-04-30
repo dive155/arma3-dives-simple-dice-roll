@@ -109,9 +109,8 @@ if (_hasDifficulty) then {
 };
 
 // Is Zeus
-if ((count _affectedPlayers > 0) and not (_codeText isEqualTo "")) then {
+if (count _affectedPlayers > 0) then {
 	private _checkPassed = (not _hasDifficulty) or {_result >= _difficulty};
-	
 	private _args = [
 		_result, 
 		_checkPassed,
@@ -123,22 +122,25 @@ if ((count _affectedPlayers > 0) and not (_codeText isEqualTo "")) then {
 		_targetPlayer,
 		_affectedPlayers
 	];
+	["DSDR_diceRollHappened", [_args]] call CBA_fnc_localEvent;
+
+	if (not (_codeText isEqualTo "")) then {
+		private _codeHeader = "params[
+			""_rollResult"", 
+			""_checkPassed"",
+			""_message"",
+			""_hasDifficulty"",
+			""_difficulty"",
+			""_hasCriticals"",
+			""_sides"", 
+			""_targetPlayer"",
+			""_affectedPlayers""
+		];";
 		
-	private _codeHeader = "params[
-		""_rollResult"", 
-		""_checkPassed"",
-		""_message"",
-		""_hasDifficulty"",
-		""_difficulty"",
-		""_hasCriticals"",
-		""_sides"", 
-		""_targetPlayer"",
-		""_affectedPlayers""
-	];";
-	
-	private _code = _codeHeader + _codeText;
-	private _compiled = compile _code;
-	_args spawn _compiled;
+		private _code = _codeHeader + _codeText;
+		private _compiled = compile _code;
+		_args spawn _compiled;
+	};
 };
 
 playSound _sound;

@@ -37,7 +37,7 @@
 	<Package name="settingsUI">
 		<Key ID="STR_DSDR_ModuleCategory">
 			<Original>Dive's DnD Dice</Original>
-			<Russian>DnD Кубики от Dive</Russian>
+			<Russian>Dive's DnD Кубики</Russian>
 		</Key>
 		<Key ID="STR_DSDR_ModuleSubcategory">
 			<Original>Roll the Dice</Original>
@@ -93,7 +93,7 @@
 		</Key>
 		<Key ID="STR_DSDR_UseCriticalTitle">
 			<Original>Enable Critical Success/Failure</Original>
-			<Russian>Включить Критическую Удачу/Неудачу</Russian>
+			<Russian>Вкл. Критическую Удачу/Неудачу</Russian>
 		</Key>
 		<Key ID="STR_DSDR_UseCriticalDescription">
 			<Original>When enabled, the lowest value of the dice will result in a "Critical Failure" message, while the highest value of the dice will result in a "Critical Success"  message</Original>
