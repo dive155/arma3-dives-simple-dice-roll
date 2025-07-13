@@ -146,7 +146,8 @@ if (count _affectedPlayers > 0) then {
 		_hasCriticals,
 		_sides, 
 		_targetPlayer,
-		_affectedPlayers
+		_affectedPlayers,
+		_buff
 	];
 	["DSDR_diceRollHappened", [_args]] call CBA_fnc_localEvent;
 
@@ -160,7 +161,8 @@ if (count _affectedPlayers > 0) then {
 			""_hasCriticals"",
 			""_sides"", 
 			""_targetPlayer"",
-			""_affectedPlayers""
+			""_affectedPlayers"",
+			""_buff""
 		];";
 		
 		private _code = _codeHeader + _codeText;
