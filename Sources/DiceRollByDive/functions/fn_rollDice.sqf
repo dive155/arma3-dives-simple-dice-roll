@@ -42,9 +42,10 @@ titleText [_introText, "PLAIN NOFADE", 3, true, true];
 sleep 4;
 
 _rangeText = "";
-// Temp buff set to 4
 _frames = [_sides, _startValue, _speed, 0.96, 5, 0.3, _useZero, _buff, _hasCriticals] call DSDR_fnc_generateDiceFrames;
-playSound "DSDR_Roll";
+_clickSounds = ["DSDR_Click1", "DSDR_Click2", "DSDR_Click3", "DSDR_Click4"];
+_startTime = time;
+playSound "DSDR_Roll_Short";
 {
 	_value = _x select 0;
 	_range = [_sides, _value, _useZero] call DSDR_fnc_generateDiceRange;
@@ -67,6 +68,10 @@ playSound "DSDR_Roll";
 		
 	_rangeText = _introText + _rangeText;		 
 	titleText [_rangeText, "PLAIN NOFADE", _delay * 0.4, true, true];
+	
+	if (time - _startTime > 1.1) then {
+		playSound (selectRandom _clickSounds);
+	};
 	sleep (_delay);
 } forEach _frames;
 
