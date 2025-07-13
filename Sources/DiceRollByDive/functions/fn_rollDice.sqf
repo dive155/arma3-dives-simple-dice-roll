@@ -25,6 +25,17 @@ if (_playerName != "") then {
 if (_hasDifficulty) then {
 	_introText = _introText + format["<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='#f79205' size='2'>%2</t>", localize "STR_DSDR_Difficulty", _difficulty];
 };
+
+if (_buff != 0) then {
+	private _buffColor = if (_buff > 0) then {"#099124"} else {"#f79205"};
+	private _buffLabel = if (_buff > 0) then {(localize "STR_DSDR_Buff")} else {(localize "STR_DSDR_Debuff")};
+	//_buffText = if (_buff > ) then {"+" + str(_buff)} else {str(_buff)};
+	_introText = _introText + format[
+		"<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='%2' size='2'>%3</t>",
+		_buffLabel, _buffColor, _buff
+	];
+};
+
 _introText = _introText + "<br/><br/>";
 
 titleText [_introText, "PLAIN NOFADE", 3, true, true];

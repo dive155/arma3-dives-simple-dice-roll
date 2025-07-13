@@ -107,7 +107,14 @@
 			<Original>Adjusts the final result after the roll. Positive values shift the result up, negative values shift it down, unless a critical result is achieved.</Original>
 			<Russian>Изменяет итог после броска. Положительные значения сдвигают результат вверх, отрицательные — вниз, если только не получен критический результат.</Russian>
 		</Key>
-
+		<Key ID="STR_DSDR_Buff">
+			<Original>Buff:</Original>
+			<Russian>Бафф:</Russian>
+		</Key>
+		<Key ID="STR_DSDR_Debuff">
+			<Original>Debuff:</Original>
+			<Russian>Дебафф:</Russian>
+		</Key>
 		<Key ID="STR_DSDR_CodeTitle">
 			<Original>Script to Execute after the Roll (hover for tooltip):</Original>
 			<Russian>Выполнить скрипт после Броска (наведите курсор для подсказки):</Russian>
