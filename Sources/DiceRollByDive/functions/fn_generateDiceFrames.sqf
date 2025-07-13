@@ -37,6 +37,7 @@ _lastFrameIndex = (count _frames) - 1;
 _lastFrame = _frames select _lastFrameIndex;
 _unbuffedFinalValue = _lastFrame select 0;
 _finalValue = _lastFrame select 0;
+_buffedFrames = 0;
 
 // Post-buff logic
 if (_buff != 0 && (count _frames) > 0) then {
@@ -68,6 +69,7 @@ if (_buff != 0 && (count _frames) > 0) then {
 
 		// Calculate per-frame delay to fit in max time
 		private _numFrames = count _validFrames;
+		_buffedFrames = _numFrames;
 		private _frameDelay = _maxPerFrameDelay;
 		if (_numFrames > 0) then {
 			private _totalTime = _numFrames * _frameDelay;
@@ -84,4 +86,4 @@ if (_buff != 0 && (count _frames) > 0) then {
 };
 
 // Return the frames array
-[_frames, _unbuffedFinalValue]
+[_frames, _unbuffedFinalValue, _buffedFrames]

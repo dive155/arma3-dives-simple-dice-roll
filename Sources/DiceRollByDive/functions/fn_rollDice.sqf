@@ -28,11 +28,11 @@ if (_hasDifficulty) then {
 
 if (isNil "DSDR_fn_getBuffText") then {
 	DSDR_fn_getBuffText = {
-		params ["_buff"];
+		params ["_buff", ["_keepZero", false]];
 		private _buffText = "";
-		if (_buff != 0) then {
-			private _buffColor = if (_buff > 0) then {"#099124"} else {"#f79205"};
-			private _buffLabel = if (_buff > 0) then {(localize "STR_DSDR_Buff")} else {(localize "STR_DSDR_Debuff")};
+		if (_buff != 0 or _keepZero) then {
+			private _buffColor = if (_buff >= 0) then {"#099124"} else {"#f79205"};
+			private _buffLabel = if (_buff >= 0) then {(localize "STR_DSDR_Buff")} else {(localize "STR_DSDR_Debuff")};
 			//_buffText = if (_buff > ) then {"+" + str(_buff)} else {str(_buff)};
 			_buffText = format[
 				"<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='%2' size='2'>%3</t>",
@@ -56,9 +56,13 @@ _framesData = [_sides, _startValue, _speed, 0.96, 5, 0.3, _useZero, _buff, _hasC
 
 _frames = _framesData select 0;
 _unbuffedFinalValue = _framesData select 1;
+_buffedFrames = _framesData select 2;
 
 _clickSounds = ["DSDR_Click1", "DSDR_Click2", "DSDR_Click3", "DSDR_Click4"];
 _startTime = time;
+
+private _buffStartIndex = (count _frames) - _buffedFrames;
+
 playSound "DSDR_Roll_Short";
 {
 	_value = _x select 0;
@@ -79,7 +83,18 @@ playSound "DSDR_Roll_Short";
  
 	_rangeText = format ["<t font='EtelkaMonospaceProBold' color='#aeaeae' size='3'>%1</t> <t font='EtelkaMonospaceProBold' color='%2' size='4'> %3 </t> <t font='EtelkaMonospaceProBold' color='#aeaeae' size='3'>%4</t><br/>",
 		_range1, _currentColor, _currentValue, _range2];
+	
+	if (_forEachIndex  >= _buffStartIndex && _buff != 0) then {
+		if (_remainingBuff > 0) then {
+			_remainingBuff = _remainingBuff - 1;
+		} else {
+			_remainingBuff = _remainingBuff + 1;
+		};
 		
+		private _keepZero = (_buff != 0);
+		_buffText = [_remainingBuff, _keepZero] call DSDR_fn_getBuffText;
+	};
+	
 	_rangeText = _introText + _buffText + "<br/><br/>" + _rangeText;		 
 	titleText [_rangeText, "PLAIN NOFADE", _delay * 0.4, true, true];
 	
