@@ -28,17 +28,21 @@ if (_hasDifficulty) then {
 
 if (isNil "DSDR_fn_getBuffText") then {
 	DSDR_fn_getBuffText = {
-		params ["_buff", ["_keepZero", false]];
+		params ["_buff", ["_keepZero", false], ["_zeroIsNegative", false]];
 		private _buffText = "";
+
 		if (_buff != 0 or _keepZero) then {
-			private _buffColor = if (_buff >= 0) then {"#099124"} else {"#f79205"};
-			private _buffLabel = if (_buff >= 0) then {(localize "STR_DSDR_Buff")} else {(localize "STR_DSDR_Debuff")};
-			//_buffText = if (_buff > ) then {"+" + str(_buff)} else {str(_buff)};
+			private _isNegative = (_buff < 0) or (_buff == 0 and _zeroIsNegative);
+
+			private _buffColor = if (_isNegative) then {"#bf1c0d"} else {"#099124"};
+			private _buffLabel = if (_isNegative) then {(localize "STR_DSDR_Debuff")} else {(localize "STR_DSDR_Buff")};
+
 			_buffText = format[
 				"<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='%2' size='2'>%3</t>",
 				_buffLabel, _buffColor, _buff
 			];
 		};
+
 		_buffText;
 	};
 };
@@ -92,7 +96,8 @@ playSound "DSDR_Roll_Short";
 		};
 		
 		private _keepZero = (_buff != 0);
-		_buffText = [_remainingBuff, _keepZero] call DSDR_fn_getBuffText;
+		private _zeroIsNegative = _buff < 0;
+		_buffText = [_remainingBuff, _keepZero, _zeroIsNegative] call DSDR_fn_getBuffText;
 	};
 	
 	_rangeText = _introText + _buffText + "<br/><br/>" + _rangeText;		 
