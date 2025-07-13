@@ -4,7 +4,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [4, false, [2,4,3,0], 3];
+	private _args = _this + [4, false, [2,4,3,0], 3, [-3,4,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d4_small.paa"] call zen_custom_modules_fnc_register;
@@ -13,7 +13,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [6, false, [2,6,3,0], 3];
+	private _args = _this + [6, false, [2,6,3,0], 3, [-5,6,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d6_small.paa"] call zen_custom_modules_fnc_register;
@@ -22,7 +22,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [8, false, [2,8,4,0], 3];
+	private _args = _this + [8, false, [2,8,4,0], 3, [-7,8,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d8_small.paa"] call zen_custom_modules_fnc_register;
@@ -31,7 +31,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [12, false, [2,12,4,0], 3];
+	private _args = _this + [12, false, [2,12,4,0], 3, [-11,12,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d12_small.paa"] call zen_custom_modules_fnc_register;
@@ -40,7 +40,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [10, false, [2,9,4,0], 3];
+	private _args = _this + [10, false, [2,9,4,0], 3, [-8,9,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d10_small.paa"] call zen_custom_modules_fnc_register;
@@ -49,7 +49,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [100, false, [2,100,50,0], 30];
+	private _args = _this + [100, false, [2,100,50,0], 30, [-99,100,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d100_small.paa"] call zen_custom_modules_fnc_register;
@@ -58,7 +58,7 @@ if (!hasInterface) exitWith {};
 {
 	params [["_pos",[0,0,0],[[]],3], ["_object",objNull,[objNull]]];
 	
-	private _args = _this + [20, true, [2,20,10,0], 3];
+	private _args = _this + [20, true, [2,20,10,0], 3, [-19,20,0,0]];
 	_args call DSDR_fnc_executeDiceModule;
 	
 }, "\DiceRollByDive\ui\d20_small.paa"] call zen_custom_modules_fnc_register;

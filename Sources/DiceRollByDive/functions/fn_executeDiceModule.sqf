@@ -4,7 +4,8 @@ params [
 	["_sides", 6],
 	["_difficultyEnabledDefault", false],
 	["_difficultySliderSettings", [2,6,3,0]],
-	["_initialSpeed", 3]
+	["_initialSpeed", 3],
+	["_buffSliderSettings", [2,6,3,0]]
 ];
 
 private _restoreLineFeeds = {
@@ -39,12 +40,13 @@ private _diffSliderSettings = [_difficultySliderSettings select 0, _difficultySl
 	["CHECKBOX",[localize "STR_DSDR_UseDifficultyTitle", localize "STR_DSDR_UseDifficultyDescription"],[_defaults select 2]],
 	["SLIDER",[localize "STR_DSDR_DifficultyTitle",localize "STR_DSDR_DifficultyDescription"],_diffSliderSettings],
 	["CHECKBOX",[localize "STR_DSDR_UseCriticalTitle", localize "STR_DSDR_UseCriticalDescription"],[_defaults select 4]],
+	["SLIDER",[localize "STR_DSDR_BuffSliderTitle",localize "STR_DSDR_BuffSliderDescription"],_buffSliderSettings],
 	["EDIT:CODE",[localize "STR_DSDR_CodeTitle",_codeDesc],[_defaults select 5,{}, 15]]
 ],{
 	params["_values","_arguments"];
 	
 	([_values, _arguments] call DSDR_fnc_parseModuleArguments) params[
-		"_pos", "_object", "_message", "_hasDifficulty", "_difficulty", "_hasCriticals", "_codeText", "_sides", "_initialSpeed"
+		"_pos", "_object", "_message", "_hasDifficulty", "_difficulty", "_hasCriticals", "_codeText", "_sides", "_initialSpeed", "_buff"
 	];
 
 	private _newDefaults = [
@@ -67,14 +69,17 @@ private _diffSliderSettings = [_difficultySliderSettings select 0, _difficultySl
 	_randomSpeed = _initialSpeed + random _initialSpeed;
 	
 	[[
-		_message,
-		_difficulty,
-		_sides, 
-		_initialValue, 
-		_randomSpeed,
-		_object,
-		_hasDifficulty,
-		_hasCriticals
+		_message,           // String, message to show
+		_difficulty,        // Number, for difficulty check
+		_sides,             // Number of sides on the cube
+		_initialValue,      // The value the roulette will be starting at
+		_randomSpeed,       // Initial speed of the roulette spinning
+		_object,            // Target player or objNull
+		_hasDifficulty,     // Bool
+		_hasCriticals,      // Bool
+		_buff               // Buff
 	], _affectedPlayers, _codeText] call DSDR_fnc_rollDiceZeus
+	// _affectedPlayers - array of player controlled units that will see the roll
+	// _codeText - string, will attempt to compile and execute
 	
 },{},[_pos, _object, _sides, _initialSpeed]] call zen_dialog_fnc_create;

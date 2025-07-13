@@ -6,8 +6,9 @@ _message = _values select 2;
 _hasDifficulty = _values select 3;
 _difficulty = round (_values select 4);
 _hasCriticals = _values select 5;
-_code = _values select 6;
+_code = _values select 7;
 _sides = _arguments select 2;
 _initialSpeed = _arguments select 3;
+_buff = _values select 6;
 
-[_pos, _object, _message, _hasDifficulty, _difficulty, _hasCriticals, _code, _sides, _initialSpeed];
+[_pos, _object, _message, _hasDifficulty, _difficulty, _hasCriticals, _code, _sides, _initialSpeed, _buff];

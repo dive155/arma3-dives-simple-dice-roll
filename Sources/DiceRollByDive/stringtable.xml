@@ -99,6 +99,15 @@
 			<Original>When enabled, the lowest value of the dice will result in a "Critical Failure" message, while the highest value of the dice will result in a "Critical Success"  message</Original>
 			<Russian>Когда включено то минимальное значение при броске кубика приведет к показу сообщения "Критическая Неудача", а максимальное к "Критическая Удача"</Russian>
 		</Key>
+		<Key ID="STR_DSDR_BuffSliderTitle">
+			<Original>Buff/Debuff</Original>
+			<Russian>Бафф/Дебафф</Russian>
+		</Key>
+		<Key ID="STR_DSDR_BuffSliderDescription">
+			<Original>Adjusts the final result after the roll. Positive values shift the result up, negative values shift it down, unless a critical result is achieved.</Original>
+			<Russian>Изменяет итог после броска. Положительные значения сдвигают результат вверх, отрицательные — вниз, если только не получен критический результат.</Russian>
+		</Key>
+
 		<Key ID="STR_DSDR_CodeTitle">
 			<Original>Script to Execute after the Roll (hover for tooltip):</Original>
 			<Russian>Выполнить скрипт после Броска (наведите курсор для подсказки):</Russian>

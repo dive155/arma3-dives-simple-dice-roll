@@ -7,6 +7,7 @@ params [
 	"_targetPlayer",
 	"_hasDifficulty",
 	"_hasCriticals",
+	"_buff",
 	["_affectedPlayers", []],
 	["_codeText", ""]
 ];
@@ -30,7 +31,8 @@ titleText [_introText, "PLAIN NOFADE", 3, true, true];
 sleep 4;
 
 _rangeText = "";
-_frames = [_sides, _startValue, _speed, 0.96, 5, 0.3, _useZero] call DSDR_fnc_generateDiceFrames;
+// Temp buff set to 4
+_frames = [_sides, _startValue, _speed, 0.96, 5, 0.3, _useZero, _buff, _hasCriticals] call DSDR_fnc_generateDiceFrames;
 playSound "DSDR_Roll";
 {
 	_value = _x select 0;
@@ -93,6 +95,7 @@ if (_hasDifficulty) then {
 	};
 
 	if (_hasCriticals) then {
+		// TODO This could fail with D10 as it starts from 0
 		if (_result == 1) then {
 			_outcome = call _fn_getCriticalFailureMessage;
 			_sound = "DSDR_Failure_Critical";
