@@ -23,3 +23,13 @@ Russian
 [h3]Source Code[/h3][url=https://github.com/dive155/arma3-dives-simple-dice-roll]https://github.com/dive155/arma3-dives-simple-dice-roll[/url]
 
 [h3]Contact[/h3][url=https://discordapp.com/users/dive155]My Discord[/url]
+
+
+
+[h3]Update 1.2.0 (13.07.2025)[/h3]+ Added ability to set [b]Buffs/Debuffs[/b] and a corresponding animation extension for the roll.
++ By default the initial value of the Buff slider is set to 0, however with scripts it is possible to change the default value for a specific player. This is done as a QoL feature for Zeuses. You can do this somewhere in your code:
+[code]
+_buffAmount = 5;
+_playerYouWantToBuff setVariable ["DSDR_Buff", _buffAmount];
+[/code]
+Now if a zeus initiates a roll for this player, the default buff value on the slider will be set to 5. This is a mere QoL recommendation - you are still free to set any other value manually.
