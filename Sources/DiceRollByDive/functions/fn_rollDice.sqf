@@ -42,7 +42,11 @@ titleText [_introText, "PLAIN NOFADE", 3, true, true];
 sleep 4;
 
 _rangeText = "";
-_frames = [_sides, _startValue, _speed, 0.96, 5, 0.3, _useZero, _buff, _hasCriticals] call DSDR_fnc_generateDiceFrames;
+_framesData = [_sides, _startValue, _speed, 0.96, 5, 0.3, _useZero, _buff, _hasCriticals] call DSDR_fnc_generateDiceFrames;
+
+_frames = _framesData select 0;
+_unbuffedFinalValue = _framesData select 1;
+
 _clickSounds = ["DSDR_Click1", "DSDR_Click2", "DSDR_Click3", "DSDR_Click4"];
 _startTime = time;
 playSound "DSDR_Roll_Short";
@@ -112,12 +116,12 @@ if (_hasDifficulty) then {
 
 	if (_hasCriticals) then {
 		// TODO This could fail with D10 as it starts from 0
-		if (_result == 1) then {
+		if (_result == 1 and _unbuffedFinalValue == 1) then {
 			_outcome = call _fn_getCriticalFailureMessage;
 			_sound = "DSDR_Failure_Critical";
 		};
 
-		if (_result == _sides) then {
+		if (_result == _sides and _unbuffedFinalValue == _sides) then {
 			_outcome = call _fn_getCriticalSuccessMessage;
 			_sound = "DSDR_Success_Critical"; 
 		};

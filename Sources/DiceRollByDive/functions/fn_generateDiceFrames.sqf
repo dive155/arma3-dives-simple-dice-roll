@@ -33,12 +33,13 @@ while {true} do {
 	_previousValue = _currentValue;
 };
 
+_lastFrameIndex = (count _frames) - 1;
+_lastFrame = _frames select _lastFrameIndex;
+_unbuffedFinalValue = _lastFrame select 0;
+_finalValue = _lastFrame select 0;
+
 // Post-buff logic
 if (_buff != 0 && (count _frames) > 0) then {
-	_lastFrameIndex = (count _frames) - 1;
-	_lastFrame = _frames select _lastFrameIndex;
-	_finalValue = _lastFrame select 0;
-
 	_isCriticalSuccess = _useCriticals && {_finalValue == _maxValue};
 	_isCriticalFailure = _useCriticals && {_finalValue == _minValue};
 
@@ -63,4 +64,4 @@ if (_buff != 0 && (count _frames) > 0) then {
 };
 
 // Return the frames array
-_frames
+[_frames, _unbuffedFinalValue]
