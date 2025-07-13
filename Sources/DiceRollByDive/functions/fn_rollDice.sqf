@@ -26,19 +26,29 @@ if (_hasDifficulty) then {
 	_introText = _introText + format["<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='#f79205' size='2'>%2</t>", localize "STR_DSDR_Difficulty", _difficulty];
 };
 
-if (_buff != 0) then {
-	private _buffColor = if (_buff > 0) then {"#099124"} else {"#f79205"};
-	private _buffLabel = if (_buff > 0) then {(localize "STR_DSDR_Buff")} else {(localize "STR_DSDR_Debuff")};
-	//_buffText = if (_buff > ) then {"+" + str(_buff)} else {str(_buff)};
-	_introText = _introText + format[
-		"<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='%2' size='2'>%3</t>",
-		_buffLabel, _buffColor, _buff
-	];
+if (isNil "DSDR_fn_getBuffText") then {
+	DSDR_fn_getBuffText = {
+		params ["_buff"];
+		private _buffText = "";
+		if (_buff != 0) then {
+			private _buffColor = if (_buff > 0) then {"#099124"} else {"#f79205"};
+			private _buffLabel = if (_buff > 0) then {(localize "STR_DSDR_Buff")} else {(localize "STR_DSDR_Debuff")};
+			//_buffText = if (_buff > ) then {"+" + str(_buff)} else {str(_buff)};
+			_buffText = format[
+				"<br/><t font='PuristaBold' size='2'>%1 </t><t font='PuristaBold' color='%2' size='2'>%3</t>",
+				_buffLabel, _buffColor, _buff
+			];
+		};
+		_buffText;
+	};
 };
 
-_introText = _introText + "<br/><br/>";
+_remainingBuff = _buff;
+_buffText = [_remainingBuff] call DSDR_fn_getBuffText;
 
-titleText [_introText, "PLAIN NOFADE", 3, true, true];
+_introTextInitial = _introText + _buffText + "<br/><br/>";
+
+titleText [_introTextInitial, "PLAIN NOFADE", 3, true, true];
 sleep 4;
 
 _rangeText = "";
@@ -70,7 +80,7 @@ playSound "DSDR_Roll_Short";
 	_rangeText = format ["<t font='EtelkaMonospaceProBold' color='#aeaeae' size='3'>%1</t> <t font='EtelkaMonospaceProBold' color='%2' size='4'> %3 </t> <t font='EtelkaMonospaceProBold' color='#aeaeae' size='3'>%4</t><br/>",
 		_range1, _currentColor, _currentValue, _range2];
 		
-	_rangeText = _introText + _rangeText;		 
+	_rangeText = _introText + _buffText + "<br/><br/>" + _rangeText;		 
 	titleText [_rangeText, "PLAIN NOFADE", _delay * 0.4, true, true];
 	
 	if (time - _startTime > 1.1) then {
