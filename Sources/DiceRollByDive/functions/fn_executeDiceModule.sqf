@@ -41,7 +41,7 @@ private _diffSliderSettings = [_difficultySliderSettings select 0, _difficultySl
 	["SLIDER",[localize "STR_DSDR_DifficultyTitle",localize "STR_DSDR_DifficultyDescription"],_diffSliderSettings],
 	["CHECKBOX",[localize "STR_DSDR_UseCriticalTitle", localize "STR_DSDR_UseCriticalDescription"],[_defaults select 4]],
 	["SLIDER",[localize "STR_DSDR_BuffSliderTitle",localize "STR_DSDR_BuffSliderDescription"],_buffSliderSettings],
-	["EDIT:CODE",[localize "STR_DSDR_CodeTitle",_codeDesc],[_defaults select 5,{}, 15]]
+	["EDIT:CODE",[localize "STR_DSDR_CodeTitle",_codeDesc],[_defaults select 5,{}, 10]]
 ],{
 	params["_values","_arguments"];
 	

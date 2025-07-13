@@ -101,6 +101,9 @@ _fn_getResultMessage = {
 
 _result = _frames select (count _frames - 1) select 0;
 
+_minValue = if (_useZero) then {0} else {1};
+_maxValue = if (_useZero) then {_sides - 1} else {_sides};
+
 _outcome = "";
 _sound = "";
 if (_hasDifficulty) then {
@@ -116,12 +119,12 @@ if (_hasDifficulty) then {
 
 	if (_hasCriticals) then {
 		// TODO This could fail with D10 as it starts from 0
-		if (_result == 1 and _unbuffedFinalValue == 1) then {
+		if (_result == _minValue and _unbuffedFinalValue == _minValue) then {
 			_outcome = call _fn_getCriticalFailureMessage;
 			_sound = "DSDR_Failure_Critical";
 		};
 
-		if (_result == _sides and _unbuffedFinalValue == _sides) then {
+		if (_result == _maxValue and _unbuffedFinalValue == _maxValue) then {
 			_outcome = call _fn_getCriticalSuccessMessage;
 			_sound = "DSDR_Success_Critical"; 
 		};
