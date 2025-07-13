@@ -48,18 +48,38 @@ if (_buff != 0 && (count _frames) > 0) then {
 		_lastFrame set [1, 1];
 		_frames set [_lastFrameIndex, _lastFrame];
 
-		_buffDirection = if (_buff > 0) then {1} else {-1};
+		private _buffDirection = if (_buff > 0) then {1} else {-1};
+		private _nextValue = _finalValue;
+		private _maxTotalTime = 3;
+		private _maxPerFrameDelay = 0.5;
 
-		_nextValue = _finalValue;
+		// We'll track how many valid frames we can actually show
+		private _validFrames = [];
 
+		// Simulate which values would be added
 		for "_i" from 1 to abs _buff do {
 			_nextValue = _nextValue + _buffDirection;
 
-			// Check if we've reached the end
+			// Stop if we hit min or max — skip further frames
 			if (_nextValue > _maxValue || _nextValue < _minValue) exitWith {};
 
-			_frames pushBack [_nextValue, 0.5];
+			_validFrames pushBack _nextValue;
 		};
+
+		// Calculate per-frame delay to fit in max time
+		private _numFrames = count _validFrames;
+		private _frameDelay = _maxPerFrameDelay;
+		if (_numFrames > 0) then {
+			private _totalTime = _numFrames * _frameDelay;
+			if (_totalTime > _maxTotalTime) then {
+				_frameDelay = _maxTotalTime / _numFrames;
+			};
+		};
+
+		// Add frames with adjusted delay
+		{
+			_frames pushBack [_x, _frameDelay];
+		} forEach _validFrames;
 	};
 };
 
