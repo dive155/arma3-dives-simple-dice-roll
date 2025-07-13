@@ -32,6 +32,14 @@ if (count _defaults == 0) then {
 	];
 };
 
+if (not isNull _object) then {
+	_buffSliderStartingValue = _object getVariable ["DSDR_Buff", 0];
+	_buffSliderStartingValue = round _buffSliderStartingValue;
+	_buffSliderStartingValue = [_buffSliderStartingValue, _buffSliderSettings select 0, _buffSliderSettings select 1] call BIS_fnc_clamp;
+	
+	_buffSliderSettings set [2, _buffSliderStartingValue];
+};
+
 private _diffSliderSettings = [_difficultySliderSettings select 0, _difficultySliderSettings select 1, _defaults select 3, _difficultySliderSettings select 3];
 [(localize "STR_DSDR_SettingsHeader") + format[" (D%1)", _sides],[
 	["SLIDER:RADIUS",[localize "STR_DSDR_RadiusTitle",localize "STR_DSDR_RadiusDescription"],[0,200,50,0,(ASLToATL _pos),[255,0,0,200]]],

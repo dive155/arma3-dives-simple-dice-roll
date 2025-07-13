@@ -104,8 +104,8 @@
 			<Russian>Бафф/Дебафф</Russian>
 		</Key>
 		<Key ID="STR_DSDR_BuffSliderDescription">
-			<Original>Adjusts the final result after the roll. Positive values shift the result up, negative values shift it down, unless a critical result is achieved.</Original>
-			<Russian>Изменяет итог после броска. Положительные значения сдвигают результат вверх, отрицательные — вниз, если только не получен критический результат.</Russian>
+			<Original>Adjusts the final result after the roll. Positive values shift the result up, negative values shift it down, unless a critical result is achieved. Setting variable DSDR_buff on the player will adjust the initial value of the slider.</Original>
+			<Russian>Изменяет итог после броска. Положительные значения сдвигают результат вверх, отрицательные — вниз, если только не получен критический результат. Установка переменной DSDR_buff на игроке изменит начальное значение слайдера.</Russian>
 		</Key>
 		<Key ID="STR_DSDR_Buff">
 			<Original>Buff:</Original>
