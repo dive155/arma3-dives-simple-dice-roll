@@ -4,113 +4,140 @@
 		<Key ID="STR_DSDR_Title">
 			<Original>Dice Roll:</Original>
 			<Russian>Бросок Кубика:</Russian>
+			<German>Wurf:</German>
 		</Key>
 		<Key ID="STR_DSDR_ForPlayer">
 			<Original>For Player:</Original>
 			<Russian>Для Игрока:</Russian>
+			<German>Für Spieler:</German>
 		</Key>
 		<Key ID="STR_DSDR_Difficulty">
 			<Original>Difficulty:</Original>
 			<Russian>Сложность:</Russian>
+			<German>Schwierigkeit:</German>
 		</Key>
 		<Key ID="STR_DSDR_Success">
 			<Original>Success!</Original>
 			<Russian>Удача!</Russian>
+			<German>Erfolg!</German>
 		</Key>
 		<Key ID="STR_DSDR_SuccessCritical">
 			<Original>Critical Success!</Original>
 			<Russian>Критическая Удача!</Russian>
+			<German>Kritischer Erfolg!</German>
 		</Key>
 		<Key ID="STR_DSDR_Failure">
 			<Original>Failure!</Original>
 			<Russian>Неудача!</Russian>
+			<German>Fehlschlag!</German>
 		</Key>
 		<Key ID="STR_DSDR_FailureCritical">
 			<Original>Critical Failure!</Original>
 			<Russian>Критическая Неудача!</Russian>
+			<German>Patzer!</German>
 		</Key>
 		<Key ID="STR_DSDR_Result">
 			<Original>Result</Original>
 			<Russian>Результат</Russian>
+			<German>Ergebnis:</German>
 		</Key>
 	</Package>
 	<Package name="settingsUI">
 		<Key ID="STR_DSDR_ModuleCategory">
 			<Original>Dive's DnD Dice</Original>
 			<Russian>Dive's DnD Кубики</Russian>
+			<German>Dive's DnD Würfel</German>
 		</Key>
 		<Key ID="STR_DSDR_ModuleSubcategory">
 			<Original>Roll the Dice</Original>
 			<Russian>Бросить Кубик</Russian>
+			<German>Würfel werfen</German>
 		</Key>
 		<Key ID="STR_DSDR_SettingsHeader">
 			<Original>Roll the Dice</Original>
 			<Russian>Бросить Кубик</Russian>
+			<German>Würfel werfen</German>
 		</Key>
 		<Key ID="STR_DSDR_RadiusTitle">
 			<Original>Visibility Radius</Original>
 			<Russian>Радиус Видимости</Russian>
+			<German>Sichtbarkeitsradius</German>
 		</Key>
 		<Key ID="STR_DSDR_RadiusDescription">
 			<Original>Players within the Radius will see the Dice Roll</Original>
 			<Russian>Игроки в пределах Радиуса увидят бросок</Russian>
+			<German>Spieler innerhalb des Radius sehen diesen Wurf</German>
 		</Key>
 		<Key ID="STR_DSDR_GlobalTitle">
 			<Original>Global Visibility</Original>
 			<Russian>Глобальная Видимость</Russian>
+			<German>Globale Sichtbarkeit</German>
 		</Key>
 		<Key ID="STR_DSDR_GlobalDescription">
 			<Original>Show to every player on the map</Original>
 			<Russian>Все игроки на карте увидят бросок</Russian>
+			<German>Allen Spielern auf der Karte anzeigen</German>
 		</Key>
 		<Key ID="STR_DSDR_MessageTitle">
 			<Original>Message</Original>
 			<Russian>Сообщение</Russian>
+			<German>Nachricht</German>
 		</Key>
 		<Key ID="STR_DSDR_MessageDescription">
 			<Original>Message to be shown to the player describing what the Dice Roll is about</Original>
 			<Russian>Сообщение для игрока с информацией что проверяет этот Бросок Кубика</Russian>
+			<German>Nachricht, die dem Spieler angezeigt wird und beschreibt, worum es bei diesem Wurf geht</German>
 		</Key>
 		<Key ID="STR_DSDR_MessageDefault">
 			<Original>Zeus initiated a Dice Roll</Original>
 			<Russian>Зевс инициировал Бросок Кубика</Russian>
+			<German>Zeus hat einen Wurf gestartet</German>
 		</Key>
 		<Key ID="STR_DSDR_UseDifficultyTitle">
 			<Original>Check against Difficulty</Original>
 			<Russian>Проверка Сложности</Russian>
+			<German>Probe gegen Schwierigkeitsgrad</German>
 		</Key>
 		<Key ID="STR_DSDR_UseDifficultyDescription">
 			<Original>The dice value will be compared against the difficulty value set below to determine Success or Failure</Original>
 			<Russian>Результат броска будет сравнен со значением сложности установленным ниже для определения Удачи/Неудачи</Russian>
+			<German>Der Würfelwert wird mit dem unterhalb gesetzten Schwierigkeitsgrad verglichen, um Erfolg oder Fehlschlag zu bestimmen</German>
 		</Key>
 		<Key ID="STR_DSDR_DifficultyTitle">
 			<Original>Difficulty</Original>
 			<Russian>Сложность</Russian>
+			<German>Schwierigkeit</German>
 		</Key>
 		<Key ID="STR_DSDR_DifficultyDescription">
 			<Original>The value the player needs to roll to succeed</Original>
 			<Russian>Какое значение должен бросить игрок для успешного прохождения проверки</Russian>
+			<German>Der Wert, den der Spieler Würfel muss um erfolgreich zu sein</German>
 		</Key>
 		<Key ID="STR_DSDR_UseCriticalTitle">
 			<Original>Enable Critical Success/Failure</Original>
 			<Russian>Вкл. Критическую Удачу/Неудачу</Russian>
+			<German>Kritischen Erfolg/Patzer aktivieren</German>
 		</Key>
 		<Key ID="STR_DSDR_UseCriticalDescription">
 			<Original>When enabled, the lowest value of the dice will result in a "Critical Failure" message, while the highest value of the dice will result in a "Critical Success"  message</Original>
 			<Russian>Когда включено то минимальное значение при броске кубика приведет к показу сообщения "Критическая Неудача", а максимальное к "Критическая Удача"</Russian>
+			<German>Wenn aktiviert, führt der niedirigste Würfelwert zu einer "Patzer" Nachricht, während der höchste Wert führt zu einer "kritischer Erfolg" Nachricht zur Folge hat</German>
 		</Key>
 		<Key ID="STR_DSDR_CodeTitle">
 			<Original>Script to Execute after the Roll (hover for tooltip):</Original>
 			<Russian>Выполнить скрипт после Броска (наведите курсор для подсказки):</Russian>
+			<German>Skript, das nach dem Wurf ausgeführt wird (Für Hinweise drüberfahren)</German>
 		</Key>
 		<Key ID="STR_DSDR_CodeDescription">
 			<Original>The execution will be LOCAL to the computer of the Zeus who initiated the Dice Roll.%Available Variables:%_rollResult - a numerical value representing the result of the Dice Roll.%_checkPassed - returns true if the difficulty check is passed. Always returns true if the check was deactivated.%_message - the message that was shown to the players.%_hasDifficulty - returns true if difficulty check was active.%_difficulty - which difficulty was set for the difficulty check.%_hasCriticals - whether or not the critical success/failure mechanic was active.%_sides - how many sides the dice had.%_targetPlayer - target player unit, objNull if none.%_affectedPlayers - the array of all players who have seen the dice roll, including zeus.</Original>
 			<Russian>Выполнение будет ЛОКАЛЬНЫМ на компьютере Зевса, который инициировал Бросок Кубика.%Доступные переменные:%_rollResult — числовое значение, представляющее результат броска.%_checkPassed — возвращает true, если проверка сложности пройдена. Всегда возвращает true, если проверка была отключена.%_message — сообщение, показанное игрокам.%_hasDifficulty — возвращает true, если проверка сложности была активна.%_difficulty — установленная сложность для проверки.%_hasCriticals — активна ли механика критических успехов/провалов.%_sides — количество граней у Кубика.%_targetPlayer — юнит целевого игрока, objNull если не задано.%_affectedPlayers — массив всех игроков, увидевших бросок, включая Зевса.</Russian>
+			<German>Die Ausführung erfolgt lokal auf dem Computer des Zeus, der den Wurf gestartet hat.%Verfügbare Variablen:%_rollResult - numerischer Wert, der das Ergebnis des Wurfs darstellt.%_checkPassed - liefert true, wenn die Probe auf den Schwierigkeitsgrad bestanden wurde. Liefert immer true, wenn die Probe deaktiviert ist.%_message - die Nachricht, die den Spielern angezeigt wurde.%_hasDifficulty - liefert true, wenn die Schwierigkeitsprobe aktiv war.%_difficulty - der für die Probe gesetzte Schwierigkeitsgrad.%_hasCriticals - true, wenn die Option für kritischen Erfolg/Patzer aktiv war, andernfalls false.%_sides - Anzahl der Seiten des Würfels.%_targetPlayer - Einheit des ausgewählten Spielers, objNull, wenn keiner gewählt wurde.%_affectedPlayers - Array aller Spieler, die den Wurf gesehen haben, einschließlich Zeus.</German>
 		</Key>
 
 		<Key ID="STR_DSDR_NoPlayersInRange">
 			<Original>No players within radius!</Original>
 			<Russian>Нет игроков в пределах радуса!</Russian>
+			<German>Keine Spieler im Radius!</German>
 		</Key>
 	</Package>
 </Project>
