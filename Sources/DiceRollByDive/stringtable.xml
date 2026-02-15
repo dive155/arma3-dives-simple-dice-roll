@@ -96,7 +96,7 @@
 		<Key ID="STR_DSDR_UseDifficultyTitle">
 			<Original>Check against Difficulty</Original>
 			<Russian>Проверка Сложности</Russian>
-			<German>Probe gegen Schwierigkeitsgrad</German>
+			<German>Probe auf Schwierigkeitsgrad</German>
 		</Key>
 		<Key ID="STR_DSDR_UseDifficultyDescription">
 			<Original>The dice value will be compared against the difficulty value set below to determine Success or Failure</Original>
@@ -111,7 +111,7 @@
 		<Key ID="STR_DSDR_DifficultyDescription">
 			<Original>The value the player needs to roll to succeed</Original>
 			<Russian>Какое значение должен бросить игрок для успешного прохождения проверки</Russian>
-			<German>Der Wert, den der Spieler Würfel muss um erfolgreich zu sein</German>
+			<German>Der Wert, den der Spieler werfen muss um erfolgreich zu sein</German>
 		</Key>
 		<Key ID="STR_DSDR_UseCriticalTitle">
 			<Original>Enable Critical Success/Failure</Original>
@@ -121,7 +121,7 @@
 		<Key ID="STR_DSDR_UseCriticalDescription">
 			<Original>When enabled, the lowest value of the dice will result in a "Critical Failure" message, while the highest value of the dice will result in a "Critical Success"  message</Original>
 			<Russian>Когда включено то минимальное значение при броске кубика приведет к показу сообщения "Критическая Неудача", а максимальное к "Критическая Удача"</Russian>
-			<German>Wenn aktiviert, führt der niedirigste Würfelwert zu einer "Patzer" Nachricht, während der höchste Wert führt zu einer "kritischer Erfolg" Nachricht zur Folge hat</German>
+			<German>Wenn aktiviert, führt der niedirigste Würfelwert zu einer "Patzer" Nachricht, während der höchste Wert führt zu eine "kritischer Erfolg" Nachricht zur Folge hat</German>
 		</Key>
 		<Key ID="STR_DSDR_CodeTitle">
 			<Original>Script to Execute after the Roll (hover for tooltip):</Original>
